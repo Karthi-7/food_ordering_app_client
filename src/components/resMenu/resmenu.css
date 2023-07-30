@@ -1,0 +1,27 @@
+.food__img{
+    height: 100% !important;
+    object-fit: cover !important;
+}
+.rating{
+  
+}
+
+@media only screen and (max-width: 600px) {
+    h2{
+        font-size: 25px !important;
+    }
+    .desc{
+        display: none;
+    }
+    .card{
+        width: 100%;
+    }
+   .add-item{
+    
+   }
+   .content{
+    display: block !important;
+   }
+
+
+}

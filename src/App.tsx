@@ -1,26 +1,66 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import Header from './components/header/Header';
+import { store } from './constants/store';
+import BodyContainer from './components/body/BodyContainer';
+import { createBrowserRouter,Outlet } from 'react-router-dom';
+import Error from './components/error/Error';
+import About from './components/About/About';
+import Contact from './components/contact/Contact';
+import RestaurantMenu from './components/resMenu/RestaurantMenu';
+import Cart from './components/cart/Cart';
+import Landing from './components/landing/Landing';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Provider store={store}>
+    <div>
+      <Header />
+      <Outlet />
     </div>
+    </Provider>
   );
 }
+export const appRouter=createBrowserRouter([
+  {
+    path:"/",
+    element:<App />,
+    children:[
+      {
+        path:"/",
+        element:<Landing />,
+        errorElement:<Error />
+      },
+      {
+        path:"/restaurants",
+        element:<BodyContainer/>,
+        errorElement:<Error />
+      }, {
+        path:"/about",
+        element:<About />,
+        errorElement:<Error />
+      },
+      {
+        path:"/contact",
+        element:<Contact />,
+        errorElement:<Error />
+      },
+      {
+        path:"/cart",
+        element:<Cart />,
+        errorElement:<Error />
+      },
+      {
+        path:"/Restaurant/menu/:resId",
+        element:<RestaurantMenu />,
+        errorElement:<Error />
+      }
+
+    ],
+    errorElement:<Error />
+  },
+ 
+
+])
 
 export default App;

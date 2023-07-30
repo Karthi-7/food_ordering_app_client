@@ -1,0 +1,32 @@
+.cart-food-img{
+    width: 80px;
+}
+.cart-food-img > img{
+    width: 100%;
+}
+.bill_detail{
+    border-top: 1px solid rgb(228, 220, 220);
+
+}
+.grant_total{
+    border-top: 1px solid rgb(228, 220, 220);
+
+}
+.no_items{
+    width: 500px;
+    height: 500px;
+}
+
+.no_items > img{
+    width: 100%;
+    height: 100%;
+}
+@media only screen and (max-width: 600px)  {
+.clear_cart{
+    width: 50% !important;
+}
+.no_items{
+    width: 250px;
+    height: 250px;
+}
+}
