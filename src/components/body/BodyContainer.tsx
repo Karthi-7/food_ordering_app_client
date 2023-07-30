@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import RestaurantCard from '../RestaurantCard/RestaurantCard'
 import 'bootstrap/dist/css/bootstrap.css';
 import "./body.css"
-import { Restaurant_Url, Swiggy_URL } from '../../utils/constant';
+import { Restaurant_Url} from '../../utils/constant';
 import ShimmerUI from '../shimmerUi/ShimmerUI';
 import { Link } from 'react-router-dom';
 
