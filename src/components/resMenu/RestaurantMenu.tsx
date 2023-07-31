@@ -1,11 +1,12 @@
 import React,{useState,useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { RestaurantById_Url, image_url, menu_Restarunt_Url } from '../../utils/constant';
 import { AiFillStar } from 'react-icons/ai';
 import "./resmenu.css"
 import { useDispatch, useSelector,TypedUseSelectorHook } from 'react-redux';
 import { useAppDispatch,useAppSelector } from '../../constants/store';
 import { addtoCart,removeItem } from '../../constants/cartSlice';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 interface Menu{
@@ -74,6 +75,7 @@ const RestaurantMenu:React.FC = () => {
         const json=await data.json()
        
         setRestaurnt(json?.result)
+        console.log(restaurant,"======res========")
       
 
     }
@@ -81,6 +83,7 @@ const RestaurantMenu:React.FC = () => {
 
     useEffect(()=>{
         fetchMenu()
+        
 
     },[])
 
@@ -89,15 +92,20 @@ const RestaurantMenu:React.FC = () => {
     },[])
 
   return (
+    <>
+  
     <div className='container mt-5  w-100'>
     <div className='col-lg-12 col-md-12 '>
     
-        <h2 className='mx-3 h3'>{restaurant.name}</h2>
+        <h2 className='mx-3 h3 '>{restaurant.name}</h2>
     
         <div className='d-flex flex-wrap'>
             <p className='text-muted mx-3'>{restaurant.minutes}</p>
             <p>{restaurant.cuisines[0]}</p>
+          
             <p className='mx-3'> <AiFillStar  className='text-success '/>{restaurant.rating}</p>
+
+          
         </div>
       
 
@@ -123,10 +131,13 @@ const RestaurantMenu:React.FC = () => {
                 </div>
             ))
         }
+        
      
       
     </div>
     </div>
+   
+    </>
   )
 }
 

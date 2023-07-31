@@ -1,0 +1,15 @@
+.para{
+    letter-spacing:0.15rem;
+    line-height: 2rem;
+    font-weight: normal;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .para{
+        letter-spacing:0.05rem;
+        line-height: 1.2rem;
+        font-weight: normal;
+    }
+
+}

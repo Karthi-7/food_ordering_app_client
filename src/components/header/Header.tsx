@@ -42,7 +42,7 @@ const Header:React.FC = () => {
           
           <li><Link className='nav-link' to='/'>Home</Link></li>
           <li><Link className='nav-link' to='/about'>About us</Link></li>
-          <li><Link className='nav-link' to='/contact'>Contact</Link></li>
+          <li><Link className='nav-link' to='/contact'>Help</Link></li>
           <div className='position-relative cart'>
           <li className=' nav-link'><Link className='nav-link' style={{fontSize: "1.5rem"} } to='/cart'><AiOutlineShoppingCart /></Link></li>
 
